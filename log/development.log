@@ -1,0 +1,1131 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (35.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreatePlayers (20140109002629)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "score" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140109002629')[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:16:50 -0800
+Connecting to database specified by database.yml
+Processing by PlayerController#index as HTML
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (3.8ms)
+Compiled player.css  (35ms)  (pid 67070)
+Compiled application.css  (45ms)  (pid 67070)
+Compiled jquery.js  (2ms)  (pid 67070)
+Compiled jquery_ujs.js  (0ms)  (pid 67070)
+Compiled player.js  (523ms)  (pid 67070)
+Compiled application.js  (559ms)  (pid 67070)
+Completed 200 OK in 742.9ms (Views: 688.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:16:52 -0800
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:16:52 -0800
+Served asset /player.css - 200 OK (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:16:52 -0800
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:16:52 -0800
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:16:52 -0800
+Served asset /player.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:16:52 -0800
+Served asset /application.js - 200 OK (5ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-22 16:16:54 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 35.1ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-22 16:18:04 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 19.2ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:18:04 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:18:04 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/player" for 127.0.0.1 at 2014-01-22 16:21:57 -0800
+Processing by PlayerController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"name"=>"I am a name"}, "commit"=>"Create Player"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (73.5ms)[0m  [1mINSERT INTO "players" ("created_at", "name", "score", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 23 Jan 2014 00:21:57 UTC +00:00], ["name", "I am a name"], ["score", nil], ["updated_at", Thu, 23 Jan 2014 00:21:57 UTC +00:00]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 102.1ms (Views: 14.4ms | ActiveRecord: 75.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:21:57 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:21:57 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/1" for 127.0.0.1 at 2014-01-22 16:22:01 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"10", "id"=>"1"}, "commit"=>"Update Player", "id"=>"1"}
+  [1m[35mPlayer Load (0.3ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "score" = 10, "updated_at" = '2014-01-23 00:22:01.578201' WHERE "players"."id" = 1
+  [1m[36m (34.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 78.8ms (Views: 7.4ms | ActiveRecord: 35.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:01 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:01 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-22 16:22:13 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 10.1ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:13 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:13 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/player" for 127.0.0.1 at 2014-01-22 16:22:18 -0800
+Processing by PlayerController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"name"=>"Joey"}, "commit"=>"Create Player"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "players" ("created_at", "name", "score", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 23 Jan 2014 00:22:18 UTC +00:00], ["name", "Joey"], ["score", nil], ["updated_at", Thu, 23 Jan 2014 00:22:18 UTC +00:00]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 20.2ms (Views: 15.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:18 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:18 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/2" for 127.0.0.1 at 2014-01-22 16:22:24 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"11", "id"=>"2"}, "commit"=>"Update Player", "id"=>"2"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "players" SET "score" = 11, "updated_at" = '2014-01-23 00:22:24.450160' WHERE "players"."id" = 2[0m
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 31.9ms (Views: 24.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:24 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:24 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-22 16:22:26 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 7.5ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:26 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:26 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/player" for 127.0.0.1 at 2014-01-22 16:22:30 -0800
+Processing by PlayerController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"name"=>"Sally"}, "commit"=>"Create Player"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "players" ("created_at", "name", "score", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 23 Jan 2014 00:22:30 UTC +00:00], ["name", "Sally"], ["score", nil], ["updated_at", Thu, 23 Jan 2014 00:22:30 UTC +00:00]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 18.7ms (Views: 12.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:30 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:30 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/3" for 127.0.0.1 at 2014-01-22 16:22:33 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"12", "id"=>"3"}, "commit"=>"Update Player", "id"=>"3"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "score" = 12, "updated_at" = '2014-01-23 00:22:33.215520' WHERE "players"."id" = 3
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 18.5ms (Views: 12.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:22:33 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:25:10 -0800
+Processing by PlayerController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 14.3ms (Views: 12.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:25:10 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:25:10 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:26:34 -0800
+Processing by PlayerController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 28.1ms (Views: 11.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:26:34 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:26:34 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/1" for 127.0.0.1 at 2014-01-22 16:26:51 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"15", "id"=>"1"}, "commit"=>"Update Player", "id"=>"1"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.6ms)[0m  [1mUPDATE "players" SET "score" = 25, "updated_at" = '2014-01-23 00:26:51.450827' WHERE "players"."id" = 1[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 27.5ms (Views: 18.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:26:51 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:26:51 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/2" for 127.0.0.1 at 2014-01-22 16:31:15 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"20", "id"=>"2"}, "commit"=>"Update Player", "id"=>"2"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "score" = 31, "updated_at" = '2014-01-23 00:31:15.746404' WHERE "players"."id" = 2
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 71.4ms (Views: 64.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:31:15 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:31:15 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/2" for 127.0.0.1 at 2014-01-22 16:41:36 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"20", "id"=>"2"}, "commit"=>"Update Player", "id"=>"2"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "players" SET "score" = 51, "updated_at" = '2014-01-23 00:41:36.395908' WHERE "players"."id" = 2[0m
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+ERROR: compiling _app_views_player_index_html_erb__4484570009751978162_70341995393480 RAISED /Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:18: syntax error, unexpected tASSOC, expecting ')'
+  :method => 'delete' );@output_buffer.safe_concat('
+            ^
+/Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_player_index_html_erb__4484570009751978162_70341995393480(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "player/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Hey look, this is index</h1>
+<p>');@output_buffer.append= ( link_to "New Player", new_player_url );@output_buffer.safe_concat('</p>
+
+'); @players.each do |player| 
+@output_buffer.safe_concat('  <p>Name:');@output_buffer.append= ( player.name );@output_buffer.safe_concat(', Score:');@output_buffer.append= ( player.score );@output_buffer.safe_concat('</p>
+  
+  ');@output_buffer.append=  form_for player do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.label :score );@output_buffer.safe_concat(':
+    ');@output_buffer.append= ( f.text_field :score );@output_buffer.safe_concat('<br />
+    
+    ');@output_buffer.append= ( f.hidden_field :id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('  
+  ');@output_buffer.append= ( link_to 'Destroy', 
+  :confirm => 'Are you sure you want to destroy?'
+  :method => 'delete' );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('
+'); end ;@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `module_eval'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `compile'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:232:in `compile!'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:144:in `block in render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:125:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:143:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/johnellis_12/Sites/score-master/app/controllers/player_controller.rb:26:in `update'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:414:in `_run__4163795195696300194__process_action__798616113098768091__callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:121:in `process'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal.rb:246:in `block in action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/conditionalget.rb:35:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/query_cache.rb:64:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `_run__608210018487717315__call__3285925393378139491__callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/engine.rb:484:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/application.rb:231:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered player/index.html.erb within layouts/application (38.0ms)
+Completed 500 Internal Server Error in 47.7ms
+
+ActionView::Template::Error (/Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:18: syntax error, unexpected tASSOC, expecting ')'
+  :method => 'delete' );@output_buffer.safe_concat('
+            ^
+/Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting $end):
+    15:   
+    16:   <%= link_to 'Destroy', 
+    17:   :confirm => 'Are you sure you want to destroy?'
+    18:   :method => 'delete' %>
+    19:   <% end %>
+    20: 
+    21: <% end %>
+  app/controllers/player_controller.rb:26:in `update'
+
+
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:41:50 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:41:50 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/1" for 127.0.0.1 at 2014-01-22 16:46:35 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"15", "id"=>"1"}, "commit"=>"Update Player", "id"=>"1"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "score" = 40, "updated_at" = '2014-01-23 00:46:35.578898' WHERE "players"."id" = 1
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+ERROR: compiling _app_views_player_index_html_erb__4484570009751978162_70341995499200 RAISED /Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:18: syntax error, unexpected tASSOC, expecting ')'
+  :destroy => 'delete' );@output_buffer.safe_concat('
+             ^
+/Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting $end
+Function body:           def _app_views_player_index_html_erb__4484570009751978162_70341995499200(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "player/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<h1>Hey look, this is index</h1>
+<p>');@output_buffer.append= ( link_to "New Player", new_player_url );@output_buffer.safe_concat('</p>
+
+'); @players.each do |player| 
+@output_buffer.safe_concat('  <p>Name:');@output_buffer.append= ( player.name );@output_buffer.safe_concat(', Score:');@output_buffer.append= ( player.score );@output_buffer.safe_concat('</p>
+  
+  ');@output_buffer.append=  form_for player do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.label :score );@output_buffer.safe_concat(':
+    ');@output_buffer.append= ( f.text_field :score );@output_buffer.safe_concat('<br />
+    
+    ');@output_buffer.append= ( f.hidden_field :id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('  
+  ');@output_buffer.append= ( link_to 'Destroy', 
+  :confirm => 'Are you sure you want to destroy?'
+  :destroy => 'delete' );@output_buffer.safe_concat('
+');   end 
+@output_buffer.safe_concat('
+'); end ;@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `module_eval'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:297:in `compile'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:232:in `compile!'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:144:in `block in render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:125:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/template.rb:143:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:88:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/johnellis_12/Sites/score-master/app/controllers/player_controller.rb:26:in `update'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:414:in `_run__4163795195696300194__process_action__798616113098768091__callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `block in instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/notifications.rb:123:in `instrument'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/base.rb:121:in `process'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal.rb:203:in `dispatch'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_controller/metal.rb:246:in `block in action'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/conditionalget.rb:35:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/query_cache.rb:64:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-3.2.15/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `_run__608210018487717315__call__3285925393378139491__callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:405:in `__run_callback'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/logger.rb:32:in `call_app'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `block in call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/tagged_logging.rb:22:in `tagged'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/logger.rb:16:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-3.2.15/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/static.rb:63:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/engine.rb:484:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/application.rb:231:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/railties-3.2.15/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+/Users/johnellis_12/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+  Rendered player/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 20.3ms
+
+ActionView::Template::Error (/Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:18: syntax error, unexpected tASSOC, expecting ')'
+  :destroy => 'delete' );@output_buffer.safe_concat('
+             ^
+/Users/johnellis_12/Sites/score-master/app/views/player/index.html.erb:22: syntax error, unexpected keyword_ensure, expecting $end):
+    15:   
+    16:   <%= link_to 'Destroy', 
+    17:   :confirm => 'Are you sure you want to destroy?'
+    18:   :destroy => 'delete' %>
+    19:   <% end %>
+    20: 
+    21: <% end %>
+  app/controllers/player_controller.rb:26:in `update'
+
+
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:48:00 -0800
+Processing by PlayerController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 15.8ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:00 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:00 -0800
+Served asset /player.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:00 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:00 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:00 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:00 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/player/1" for 127.0.0.1 at 2014-01-22 16:48:01 -0800
+Processing by PlayerController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "id"=>"1"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "players" WHERE "players"."id" = ?  [["id", 1]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 17.9ms (Views: 10.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:01 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:01 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:01 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:01 -0800
+Served asset /player.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:01 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:01 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/player/3" for 127.0.0.1 at 2014-01-22 16:48:05 -0800
+Processing by PlayerController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "id"=>"3"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "players" WHERE "players"."id" = ?[0m  [["id", 3]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 20.8ms (Views: 11.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:05 -0800
+Served asset /player.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:05 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:05 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:05 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:05 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:05 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/player/2" for 127.0.0.1 at 2014-01-22 16:48:08 -0800
+Processing by PlayerController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "id"=>"2"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "players" WHERE "players"."id" = ?  [["id", 2]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45.9ms (Views: 40.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:08 -0800
+Served asset /player.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:08 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:08 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:08 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:48:08 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:48:08 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started DELETE "/player/2" for 127.0.0.1 at 2014-01-22 16:52:45 -0800
+Processing by PlayerController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "id"=>"2"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "2"]]
+Completed 404 Not Found in 1.5ms
+
+ActiveRecord::RecordNotFound (Couldn't find Player with id=2):
+  app/controllers/player_controller.rb:30:in `destroy'
+
+
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:52:54 -0800
+Processing by PlayerController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (0.6ms)
+Compiled application.css  (5ms)  (pid 67070)
+Compiled application.css  (16ms)  (pid 67070)
+Completed 200 OK in 92.3ms (Views: 91.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:52:54 -0800
+Served asset /player.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:52:54 -0800
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:54 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:54 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:54 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:54 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:52:56 -0800
+Processing by PlayerController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6.5ms (Views: 5.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:52:56 -0800
+Served asset /player.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:52:56 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:56 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:56 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:56 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:52:56 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:53:11 -0800
+Processing by PlayerController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (0.5ms)
+Compiled application.css  (3ms)  (pid 67070)
+Compiled application.css  (3ms)  (pid 67070)
+Completed 200 OK in 26.8ms (Views: 25.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:53:11 -0800
+Served asset /application.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/player.css?body=1" for 127.0.0.1 at 2014-01-22 16:53:11 -0800
+Served asset /player.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:11 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:11 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:11 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:11 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:53:48 -0800
+Processing by PlayerController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14.4ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:48 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:48 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:48 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:53:48 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:53:48 -0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:54:17 -0800
+Processing by PlayerController#index as HTML
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (0.4ms)
+Compiled application.css  (4ms)  (pid 67070)
+Completed 200 OK in 22.4ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:54:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:54:17 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:54:17 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:54:17 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:54:17 -0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 16:55:12 -0800
+Processing by PlayerController#index as HTML
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (0.5ms)
+Compiled application.css  (3ms)  (pid 67070)
+Completed 200 OK in 55.3ms (Views: 54.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 16:55:12 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 16:55:12 -0800
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 16:55:12 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 16:55:12 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 16:55:12 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-22 17:00:33 -0800
+Processing by PlayerController#index as HTML
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (0.4ms)
+Compiled application.css  (6ms)  (pid 67070)
+Completed 200 OK in 39.1ms (Views: 38.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 17:00:33 -0800
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:33 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:33 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:33 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-22 17:00:34 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9.2ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:34 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:34 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:34 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:34 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started POST "/player" for 127.0.0.1 at 2014-01-22 17:00:37 -0800
+Processing by PlayerController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"name"=>"Tina"}, "commit"=>"Create Player"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "players" ("created_at", "name", "score", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 23 Jan 2014 01:00:37 UTC +00:00], ["name", "Tina"], ["score", nil], ["updated_at", Thu, 23 Jan 2014 01:00:37 UTC +00:00]]
+  [1m[36m (36.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 50.5ms (Views: 7.9ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:37 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:37 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:37 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 17:00:37 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/4" for 127.0.0.1 at 2014-01-22 17:00:40 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"10", "id"=>"4"}, "commit"=>"Update Player", "id"=>"4"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "4"]]
+Completed 500 Internal Server Error in 1.6ms
+
+TypeError (nil can't be coerced into Fixnum):
+  app/controllers/player_controller.rb:22:in `+'
+  app/controllers/player_controller.rb:22:in `update'
+
+
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.4ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/johnellis_12/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-3.2.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 17:01:26 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:26 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:26 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:26 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:26 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/4" for 127.0.0.1 at 2014-01-22 17:01:28 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"10", "id"=>"4"}, "commit"=>"Update Player", "id"=>"4"}
+  [1m[35mPlayer Load (0.1ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "players" SET "score" = 10, "updated_at" = '2014-01-23 01:01:28.570019' WHERE "players"."id" = 4
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.7ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 26.6ms (Views: 10.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:28 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:28 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:28 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:28 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 17:01:28 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started PUT "/player/4" for 127.0.0.1 at 2014-01-22 17:01:31 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh5lEBUuqh/HfvS5vbzova4afdspo7jGczSmyO9gZiE=", "player"=>{"score"=>"10", "id"=>"4"}, "commit"=>"Update Player", "id"=>"4"}
+  [1m[36mPlayer Load (0.1ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "players" SET "score" = 20, "updated_at" = '2014-01-23 01:01:31.454730' WHERE "players"."id" = 4[0m
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 18.2ms (Views: 8.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:31 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:31 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:31 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-22 17:01:31 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 17:01:31 -0800
+Served asset /application.css - 304 Not Modified (0ms)
