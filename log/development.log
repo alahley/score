@@ -1129,3 +1129,271 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-22 17:01:31 -0800
 Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-01-29 17:07:44 -0800
+Connecting to database specified by database.yml
+Processing by PlayerController#index as HTML
+  [1m[36mPlayer Load (0.5ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (15.2ms)
+Compiled jquery.js  (2ms)  (pid 44616)
+Compiled jquery_ujs.js  (0ms)  (pid 44616)
+Compiled application.js  (24ms)  (pid 44616)
+Completed 200 OK in 126.7ms (Views: 92.1ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-29 17:07:45 -0800
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:07:45 -0800
+Served asset /player.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:07:45 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:07:45 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:07:45 -0800
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started PUT "/player/4" for 127.0.0.1 at 2014-01-29 17:08:00 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/y3+q3Rd9NQ2ENszCIIhKT3CX5qt1pN3zTWSA+C8+l4=", "player"=>{"score"=>"20", "id"=>"4"}, "commit"=>"Update Player", "id"=>"4"}
+  [1m[35mPlayer Load (2.0ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (37.7ms)[0m  UPDATE "players" SET "score" = 40, "updated_at" = '2014-01-30 01:08:00.697542' WHERE "players"."id" = 4
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.4ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 79.2ms (Views: 11.6ms | ActiveRecord: 41.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:00 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:00 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:00 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:00 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/4" for 127.0.0.1 at 2014-01-29 17:08:04 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/y3+q3Rd9NQ2ENszCIIhKT3CX5qt1pN3zTWSA+C8+l4=", "player"=>{"score"=>"60", "id"=>"4"}, "commit"=>"Update Player", "id"=>"4"}
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mUPDATE "players" SET "score" = 100, "updated_at" = '2014-01-30 01:08:05.003479' WHERE "players"."id" = 4[0m
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.3ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 16.5ms (Views: 10.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:05 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:05 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:05 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:08:05 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/player/4" for 127.0.0.1 at 2014-01-29 17:11:41 -0800
+Processing by PlayerController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/y3+q3Rd9NQ2ENszCIIhKT3CX5qt1pN3zTWSA+C8+l4=", "id"=>"4"}
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "players" WHERE "players"."id" = ?  [["id", 4]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12.9ms (Views: 4.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:41 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:41 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:41 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:41 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-29 17:11:44 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 9.6ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:44 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:44 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:44 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:44 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:48 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:48 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:48 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:48 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-29 17:11:50 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7.4ms (Views: 6.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:50 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:50 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:50 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:50 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:56 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:56 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:56 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:56 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/player/new" for 127.0.0.1 at 2014-01-29 17:11:57 -0800
+Processing by PlayerController#new as HTML
+  Rendered player/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 8.3ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:57 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:57 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:57 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:11:57 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started POST "/player" for 127.0.0.1 at 2014-01-29 17:12:00 -0800
+Processing by PlayerController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/y3+q3Rd9NQ2ENszCIIhKT3CX5qt1pN3zTWSA+C8+l4=", "player"=>{"name"=>"adam"}, "commit"=>"Create Player"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "players" ("created_at", "name", "score", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Thu, 30 Jan 2014 01:12:00 UTC +00:00], ["name", "adam"], ["score", nil], ["updated_at", Thu, 30 Jan 2014 01:12:00 UTC +00:00]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mPlayer Load (0.2ms)[0m  SELECT "players".* FROM "players" 
+  Rendered player/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 16.8ms (Views: 8.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:00 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:00 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:01 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:01 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started PUT "/player/5" for 127.0.0.1 at 2014-01-29 17:12:05 -0800
+Processing by PlayerController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/y3+q3Rd9NQ2ENszCIIhKT3CX5qt1pN3zTWSA+C8+l4=", "player"=>{"score"=>"50", "id"=>"5"}, "commit"=>"Update Player", "id"=>"5"}
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" WHERE "players"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "players" SET "score" = 50, "updated_at" = '2014-01-30 01:12:05.763443' WHERE "players"."id" = 5[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mPlayer Load (0.2ms)[0m  [1mSELECT "players".* FROM "players" [0m
+  Rendered player/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 11.4ms (Views: 6.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:05 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:05 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/player.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:05 -0800
+Served asset /player.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-29 17:12:05 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
